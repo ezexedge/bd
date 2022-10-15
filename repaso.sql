@@ -1,0 +1,22 @@
+--Select leg, LEFT(Nom, 1)Nom,
+--Right(Ape, 2)||
+--Substring(Ape, 2, 3),Ape
+--From Alumnos
+--where left(nom, 1)='j'
+--or right(Ape, 2)='ez'
+--or substring(Ape, 2,3)='art';
+--Select nota,nota*10 nota10,
+--sin(nota),log(nota),sqrt(nota)
+--From Finales;
+--Select leg, cuota *2
+--From Alumnos
+--Where cuota is Not null;
+--Select DATE_PART('year',Fec) YEAR_NUM,
+--to_char(fec,'yyyy')year_chat,
+--fec,mat,leg
+--From Finales
+--order by fec,mat,leg
+--order by 3 Desc, mat ASC ,5 Asc;
+--select * from finales where (mat =  1001 or mat = 1002 or mat = 1003) and leg > 200
+--select * from finales where mat in (1001,1002,1003)
+select * from finales where mat in (select mat from materias where nombre like '%BD%');
